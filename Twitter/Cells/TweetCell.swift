@@ -13,6 +13,7 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
+    @IBOutlet weak var handleLabel: UILabel!
     
     
     override func awakeFromNib() {

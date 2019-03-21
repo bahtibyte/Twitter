@@ -71,18 +71,31 @@ class HomeTVC: UITableViewController {
         UserDefaults.standard.set(false, forKey: "userLoggedIn")
         self.dismiss(animated: true, completion: nil)
     }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
         let user = tweetArray[indexPath.row]["user"] as! NSDictionary
         
+        cell.tweetLabel.sizeToFit()
+        
         cell.nameLabel.text = user["name"] as? String
         
+        cell.handleLabel.text = "@" + ((user["screen_name"] as? String)!)
+        
         cell.tweetLabel.text = tweetArray[indexPath.row]["text"] as? String
+        
+        
         
         let imageUrl = URL(string: (user ["profile_image_url_https"] as? String)!)
         let data = try? Data (contentsOf: imageUrl!)
         
         if let imageData = data {
+            cell.profileImage.layer.borderWidth = 1
+            cell.profileImage.layer.masksToBounds = false
+            cell.profileImage.layer.borderColor = UIColor.black.cgColor
+            cell.profileImage.layer.cornerRadius = cell.profileImage.frame.height/2
+            cell.profileImage.clipsToBounds = true
+            
             cell.profileImage.image = UIImage(data: imageData)
         }
         
