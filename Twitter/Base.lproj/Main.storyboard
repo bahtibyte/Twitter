@@ -100,10 +100,16 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgT-5t-U6r">
                                                     <rect key="frame" x="185" y="457.5" width="30" height="30"/>
                                                     <state key="normal" image="retweet-icon"/>
+                                                    <connections>
+                                                        <action selector="onRetweet:" destination="sb5-EV-7gr" eventType="touchUpInside" id="hQD-nT-vMg"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BkG-Ve-mLz">
                                                     <rect key="frame" x="247" y="41.5" width="30" height="446"/>
                                                     <state key="normal" image="favor-icon"/>
+                                                    <connections>
+                                                        <action selector="onLike:" destination="sb5-EV-7gr" eventType="touchUpInside" id="MSe-RT-NTv"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -137,8 +143,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="handleLabel" destination="yd3-0M-IsZ" id="gVF-Bm-3X9"/>
+                                    <outlet property="likeButton" destination="BkG-Ve-mLz" id="g0h-Ld-x0y"/>
                                     <outlet property="nameLabel" destination="vJY-qF-1pv" id="N6D-3v-oTw"/>
                                     <outlet property="profileImage" destination="PJw-wp-147" id="Hqj-HH-00V"/>
+                                    <outlet property="retweetButton" destination="HgT-5t-U6r" id="wyE-Dc-NPP"/>
                                     <outlet property="tweetLabel" destination="MeX-Ky-mVw" id="h3y-vw-NqZ"/>
                                 </connections>
                             </tableViewCell>
@@ -251,7 +259,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PoE-va-IuY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1300" y="-663"/>
+            <point key="canvasLocation" x="1068" y="-662"/>
         </scene>
     </scenes>
     <resources>
